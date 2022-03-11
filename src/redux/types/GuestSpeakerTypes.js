@@ -1,0 +1,1 @@
+export const SET_GUEST_SPEAKER = "SET_GUEST_SPEAKER"
