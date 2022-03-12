@@ -1,0 +1,12 @@
+.slick-prev:before, .slick-next:before{
+    @apply text-customButton md:text-3xl xl:text-5xl !important;
+}
+.slick-prev, .slick-next{
+    @apply z-10 !important;
+}
+.slick-prev{
+    @apply left-4 !important;
+}
+.slick-next{
+    @apply right-4 md:right-7 xl:right-11 !important;
+}

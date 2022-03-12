@@ -2,15 +2,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { setToggle2Action, setToggleAction, setTranslateAction } from '../../../redux/actions/HeaderEffectActions'
 
 export default function HomeHeader(props) {
 
   const { toggle, toggle_2, translate } = useSelector(state => state.HeaderEffectReducer)
 
-  const { navigate } = useSelector(state=>state.NavigateReducer)
-
   const dispatch = useDispatch()
+
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -57,7 +57,7 @@ export default function HomeHeader(props) {
             <p className="font-semibold break-all">Vietnamese Youth Alliance</p>
           </div>
           <div className={`${toggle ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
-            <a onClick={() => { navigate("/home", {replace: true})}} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">About</a>
+            <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
             <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
             <a onClick={() => { props.executeScrollFooterHomeTemplate() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white bg-orange-500 hover:bg-orange-600 border-t-4 border-r-4 border-orange-700 rounded-md duration-300 hover:scale-120" rel="noreferrer">Register</a>
@@ -91,7 +91,7 @@ export default function HomeHeader(props) {
             <p className="font-semibold break-all">Vietnamese Youth Alliance</p>
           </div>
           <div className={`${toggle_2 ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
-            <a onClick={() => { props.executeScrollHeaderHomeTemplate() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">About</a>
+            <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
             <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
             <a onClick={() => { props.executeScrollFooterHomeTemplate() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer opacity-100 p-2 lg:px-4 md:mx-2 text-lg font-medium text-white border-t-4 border-r-4 border-orange-700 rounded-md bg-orange-500 hover:bg-orange-600 duration-300 hover:scale-120" rel="noreferrer">Register</a>
