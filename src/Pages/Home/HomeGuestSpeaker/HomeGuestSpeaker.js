@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { setGuestSpeakerEffectAction } from '../../../redux/actions/AppEffectActions'
 import { setGuestSpeakerAction } from '../../../redux/actions/GuestSpeakerAction'
 
 export default function HomeGuestSpeaker() {
@@ -9,8 +10,23 @@ export default function HomeGuestSpeaker() {
 
     const dispatch = useDispatch()
 
+    const { guestSpeakerEffect } = useSelector(state => state.AppEffectReducer);
+
+    const guestSpeakerRef = useRef(null)
+
     useEffect(() => {
         dispatch(setGuestSpeakerAction())
+        let height = 0;
+        const handleEffect = setInterval(() => {
+            height = guestSpeakerRef.current.getBoundingClientRect().top;
+            clearInterval(handleEffect)
+        }, 100)
+        window.addEventListener("scroll", () => {
+            const position = window.pageYOffset
+            if (position > height - 600) {
+                dispatch(setGuestSpeakerEffectAction())
+            }
+        })
     }, [])
 
     const renderGuestSpeaker = () => {
@@ -40,7 +56,7 @@ export default function HomeGuestSpeaker() {
     }
 
     return (
-        <div className="my-12">
+        <div ref={guestSpeakerRef} className="my-12 duration-1500" style={{ opacity: `${guestSpeakerEffect.opacity}`, transform: `${guestSpeakerEffect.translate}` }}>
             <h1 className="text-center text-3xl font-bold">Guest speakers</h1>
             <section className="body-font">
                 <div className="container px-5 my-6 mx-auto">

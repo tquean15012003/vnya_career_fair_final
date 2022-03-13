@@ -26,6 +26,5 @@ export default function HomeFooter(props) {
         </div>
       </footer>
     </div>
-
   );
 }

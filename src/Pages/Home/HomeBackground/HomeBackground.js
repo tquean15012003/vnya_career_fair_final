@@ -10,6 +10,7 @@ export default function HomeBackground() {
     const { backgroundList } = useSelector(state => state.BackgroundReducer)
 
     const dispatch = useDispatch()
+    
     useEffect(() => {
         dispatch(setBackgroundAction())
     }, [])
@@ -37,7 +38,7 @@ export default function HomeBackground() {
     }
 
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden cursor-grab'>
             <Slider {...settings}>
                 {renderBackground()}
             </Slider>

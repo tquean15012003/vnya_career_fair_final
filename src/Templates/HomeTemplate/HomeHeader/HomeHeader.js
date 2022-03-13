@@ -3,14 +3,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setToggle2Action, setToggleAction, setTranslateAction } from '../../../redux/actions/HeaderEffectActions'
+import { setToggle2Action, setToggleAction, setTranslateAction } from '../../../redux/actions/AppEffectActions'
 
 export default function HomeHeader(props) {
 
-  const { toggle, toggle_2, translate } = useSelector(state => state.HeaderEffectReducer)
+  const { toggle, toggle_2, translate } = useSelector(state => state.AppEffectReducer)
 
   const dispatch = useDispatch()
-
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

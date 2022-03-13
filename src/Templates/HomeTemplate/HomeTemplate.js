@@ -17,8 +17,8 @@ export default function HomeTemplate(props) {
     return (
         <>
             <HomeHeader myRefHeaderHomeTemplate={myRefHeaderHomeTemplate} executeScrollHeaderHomeTemplate={executeScrollHeaderHomeTemplate} executeScrollGoldSponsorHome={executeScrollGoldSponsorHome} executeScrollFooterHomeTemplate={executeScrollFooterHomeTemplate} />
-            <Component myRefGoldSponsorHome={myRefGoldSponsorHome}/>
-            <HomeFooter myRefFooterHomeTemplate={myRefFooterHomeTemplate}/>
+            <Component myRefGoldSponsorHome={myRefGoldSponsorHome} />
+            <HomeFooter myRefFooterHomeTemplate={myRefFooterHomeTemplate} />
         </>
     )
 }

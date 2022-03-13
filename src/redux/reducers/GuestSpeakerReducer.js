@@ -1,7 +1,7 @@
 import { SET_GUEST_SPEAKER } from "../types/GuestSpeakerTypes"
 
 const stateDefault = {
-    guestSpeakerList: [{ id: 1, image: "./assets/img/vnya_speaker_mai.png"}],
+    guestSpeakerList: [{ id: 1, image: "./assets/img/vnya_speaker_mai.png" }],
 }
 
 export const GuestSpeakerReducer = (state = stateDefault, action) => {

@@ -11,22 +11,22 @@ import { setSponsorAction } from '../../redux/actions/SponsorActions'
 export default function Home(props) {
 
   const { sponsorList } = useSelector(state => state.SponsorReducer)
-  
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(setSponsorAction())
-  },[])
 
   const goldSponsorList = sponsorList.filter(sponsor => sponsor.goldSponsor)
 
   const mediaSponsorList = sponsorList.filter(sponsor => !sponsor.goldSponsor)
 
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setSponsorAction())
+  }, [])
+
   return (
     <div style={{ backgroundColor: "#FAFAFA" }}>
       <HomeBackground />
-      <HomeGoldSponsor myRefGoldSponsorHome={props.myRefGoldSponsorHome} goldSponsorList={goldSponsorList}/>
-      <HomePartner mediaSponsorList={mediaSponsorList}/>
+      <HomeGoldSponsor myRefGoldSponsorHome={props.myRefGoldSponsorHome} goldSponsorList={goldSponsorList} />
+      <HomePartner mediaSponsorList={mediaSponsorList} />
       <HomeGuestSpeaker />
       <HomeHighlight />
     </div>

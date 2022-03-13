@@ -25,7 +25,7 @@ function App() {
       <Route path="/" element={<HomeTemplate Component={Home} />} />
       <Route path="/home" element={<HomeTemplate Component={Home} />} />
       <Route path="/companydetail/:id" element={<HomeTemplate Component={CompanyDetail} />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<HomeTemplate Component={NotFound} />} />
     </Routes>
   );
 }
