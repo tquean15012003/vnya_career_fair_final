@@ -58,7 +58,7 @@ export default function HomeHeader(props) {
           <div className={`${toggle ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
             <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
             <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
-            <a onClick={() => { props.executeScrollFooterHomeTemplate() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact</a>
+            <Link to='/contact' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact us</Link>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white bg-orange-500 hover:bg-orange-600 border-t-4 border-r-4 border-orange-700 rounded-md duration-300 hover:scale-120" rel="noreferrer">Register</a>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function HomeHeader(props) {
           <div className={`${toggle_2 ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
             <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
             <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
-            <a onClick={() => { props.executeScrollFooterHomeTemplate() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact</a>
+            <Link to='/contact' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact us</Link>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer opacity-100 p-2 lg:px-4 md:mx-2 text-lg font-medium text-white border-t-4 border-r-4 border-orange-700 rounded-md bg-orange-500 hover:bg-orange-600 duration-300 hover:scale-120" rel="noreferrer">Register</a>
           </div>
         </div>

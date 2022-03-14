@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { navigateAction } from './redux/actions/NavigateActions';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/" element={<HomeTemplate Component={Home} />} />
       <Route path="/home" element={<HomeTemplate Component={Home} />} />
       <Route path="/companydetail/:id" element={<HomeTemplate Component={CompanyDetail} />} />
+      <Route path="/contact" element={<HomeTemplate Component={ContactUs} />} />
       <Route path="*" element={<HomeTemplate Component={NotFound} />} />
     </Routes>
   );

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function HomeFooter(props) {
+export default function HomeFooter() {
 
   return (
-    <div ref={props.myRefFooterHomeTemplate}>
+    <div>
       <footer className="container mx-auto p-4 sm:p-6">
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="flex items-center justify-center flex-col">
