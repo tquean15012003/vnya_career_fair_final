@@ -12,6 +12,7 @@ export default function HomeHeader(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    // capture the event when position > 300, the fixed nav will appear
     window.addEventListener("scroll", () => {
       const position = window.pageYOffset
       if (position > 300) {
@@ -26,6 +27,7 @@ export default function HomeHeader(props) {
 
   return (
     <>
+      {/* Header Nav*/}
       <nav ref={props.myRefHeaderHomeTemplate} className="py-2 md:py-3 text-white bg-gradient-to-b from-blue-900 to-blue-800">
         <div className="container px-4 mx-auto md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">
@@ -63,6 +65,8 @@ export default function HomeHeader(props) {
           </div>
         </div>
       </nav>
+
+      {/* Fixed Nav*/}
       <nav className={`z-10 fixed w-full py-2 md:py-3 text-white bg-gradient-to-b from-blue-900/90 to-blue-800/90 top-0 transition-all duration-500`} style={{ transform: `${translate}` }}>
         <div className="container px-4 mx-auto md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">

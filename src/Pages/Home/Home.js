@@ -19,6 +19,7 @@ export default function Home(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    //fetch image of sponsors
     dispatch(setSponsorAction())
   }, [])
 

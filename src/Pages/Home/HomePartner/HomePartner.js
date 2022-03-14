@@ -18,7 +18,7 @@ export default function HomePartner(props) {
     const renderMediaSponsor = () => {
         return mediaSponsorList.map((sponsor, index) => {
             return (
-                <div onClick={() => { navigate(`/companydetail/${sponsor.id}`, { replace: true }) }} className="h-64 xl:h-52 w-full xl:w-1/4 md:w-1/2 p-5 cursor-pointer rounded-2xl" key={index}>
+                <div onClick={() => { navigate(`/companydetail/${sponsor.id}`, { replace: false }) }} className="h-64 xl:h-52 w-full xl:w-1/4 md:w-1/2 p-5 cursor-pointer rounded-2xl" key={index}>
                     <div className="rounded-2xl bg-white shadow-md hover:scale-120 duration-300 p-7 w-full h-full items-center flex justify-center">
                         <img src={sponsor.image} alt={sponsor.image} />
                     </div>
@@ -28,6 +28,8 @@ export default function HomePartner(props) {
     }
 
     useEffect(() => {
+
+        // load only when scroll to the component
         let height = 0;
         const handleEffect = setInterval(() => {
             height = mediaSponsorRef.current.getBoundingClientRect().top;

@@ -1,0 +1,1 @@
+export const GET_COMPANY_DETAIL = "GET_COMPANY_DETAIL"

@@ -15,7 +15,10 @@ export default function HomeGuestSpeaker() {
     const guestSpeakerRef = useRef(null)
 
     useEffect(() => {
+        // fetch images of speakers
         dispatch(setGuestSpeakerAction())
+
+        // load only when scroll to the component
         let height = 0;
         const handleEffect = setInterval(() => {
             height = guestSpeakerRef.current.getBoundingClientRect().top;

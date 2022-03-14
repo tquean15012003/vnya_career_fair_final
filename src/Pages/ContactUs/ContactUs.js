@@ -1,3 +1,5 @@
+// Contact us form permits user to send email to organization quickly
+
 import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
 
@@ -6,8 +8,10 @@ export default function ContactUs() {
     const formContactRef = useRef(null);
 
     const sendEmail = (e) => {
+        // prevent reload when submit form
         e.preventDefault();
-
+        
+        // call api to send email from emailjs
         emailjs.sendForm('service_8lsu3s2', 'template_tnl8u4s', formContactRef.current, '_ESVSkQ8pLg7FH4K6')
             .then(() => {
                 alert("We have received your response. Thank you for contact us.")

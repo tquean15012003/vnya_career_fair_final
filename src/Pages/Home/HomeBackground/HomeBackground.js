@@ -10,11 +10,13 @@ export default function HomeBackground() {
     const { backgroundList } = useSelector(state => state.BackgroundReducer)
 
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
+        // fetch background image
         dispatch(setBackgroundAction())
     }, [])
 
+    // carousel settings
     const settings = {
         infinite: true,
         speed: 1000,
@@ -47,6 +49,7 @@ export default function HomeBackground() {
     )
 }
 
+// set previous and next arrow of carousel
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (

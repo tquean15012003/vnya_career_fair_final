@@ -6,12 +6,12 @@ export default function HomeGoldSponsor(props) {
 
     const { myRefGoldSponsorHome, goldSponsorList } = props
 
-    const { navigate } = useSelector(state=>state.NavigateReducer)
+    const { navigate } = useSelector(state => state.NavigateReducer)
 
     const renderGoldSponsor = () => {
         return goldSponsorList.map((sponsor, index) => {
             return (
-                <div onClick={() => {navigate(`/companydetail/${sponsor.id}`, {replace: true})}} className="h-64 md:h-auto w-full xl:w-1/3 md:w-1/2 p-5 cursor-pointer rounded-2xl" key={index}>
+                <div onClick={() => { navigate(`/companydetail/${sponsor.id}`, { replace: false }) }} className="h-64 md:h-auto w-full xl:w-1/3 md:w-1/2 p-5 cursor-pointer rounded-2xl" key={index}>
                     <div className="rounded-2xl bg-white shadow-md hover:scale-110 duration-300 p-7 w-full h-full items-center flex justify-center">
                         <img src={sponsor.image} alt={sponsor.image} />
                     </div>
