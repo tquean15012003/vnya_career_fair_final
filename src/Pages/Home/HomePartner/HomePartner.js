@@ -32,7 +32,7 @@ export default function HomePartner(props) {
         const handleEffect = setInterval(() => {
             height = mediaSponsorRef.current.getBoundingClientRect().top;
             clearInterval(handleEffect)
-        }, 100)
+        }, 200)
         window.addEventListener("scroll", () => {
             const position = window.pageYOffset
             if (position > height - 600) {
@@ -42,7 +42,7 @@ export default function HomePartner(props) {
     }, [])
 
     return (
-        <div ref={mediaSponsorRef} className="mt-12 duration-1500" style={{ opacity: `${mediaSponsorEffect.opacity}`, transform: `${mediaSponsorEffect.translate}` }}>
+        <div ref={mediaSponsorRef} className="mt-12 duration-2000" style={{ opacity: `${mediaSponsorEffect.opacity}`, transform: `${mediaSponsorEffect.translate}` }}>
             <h1 className="text-center text-3xl font-bold">Media sponsors</h1>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 my-6 mx-auto">

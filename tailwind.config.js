@@ -864,6 +864,7 @@ module.exports = {
       700: '700ms',
       1000: '1000ms',
       1500: '1500ms',
+      2000: '2000ms',
     },
     transitionProperty: {
       none: 'none',

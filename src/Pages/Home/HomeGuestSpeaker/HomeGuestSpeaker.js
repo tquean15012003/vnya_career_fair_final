@@ -20,7 +20,7 @@ export default function HomeGuestSpeaker() {
         const handleEffect = setInterval(() => {
             height = guestSpeakerRef.current.getBoundingClientRect().top;
             clearInterval(handleEffect)
-        }, 100)
+        }, 200)
         window.addEventListener("scroll", () => {
             const position = window.pageYOffset
             if (position > height - 600) {
@@ -56,7 +56,7 @@ export default function HomeGuestSpeaker() {
     }
 
     return (
-        <div ref={guestSpeakerRef} className="my-12 duration-1500" style={{ opacity: `${guestSpeakerEffect.opacity}`, transform: `${guestSpeakerEffect.translate}` }}>
+        <div ref={guestSpeakerRef} className="my-12 duration-2000" style={{ opacity: `${guestSpeakerEffect.opacity}`, transform: `${guestSpeakerEffect.translate}` }}>
             <h1 className="text-center text-3xl font-bold">Guest speakers</h1>
             <section className="body-font">
                 <div className="container px-5 my-6 mx-auto">
