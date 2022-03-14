@@ -6,9 +6,16 @@ import { getCompanyDetailAction } from '../../redux/actions/CompanyAction'
 
 export default function CompanyDetail() {
 
-    const { companyDetail } = useSelector(state => state.CompanyReducer)
-
     const { id } = useParams()
+
+    const { navigate } = useSelector(state => state.NavigateReducer)
+
+    // If company does not have detail, prevent click
+    if (id === "6" || id === "10") {
+        navigate("/", { replace: false })
+    }
+
+    const { companyDetail } = useSelector(state => state.CompanyReducer)
 
     const dispatch = useDispatch()
 
