@@ -1,18 +1,12 @@
-import { SET_GUEST_SPEAKER_EFFECT, SET_MEDIA_SPONSOR_EFFECT, SET_TOGGLE, SET_TOGGLE_2, SET_TRANSLATE } from "../types/AppEffectTypes";
+import { SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT } from "../types/AppEffectTypes";
 
-export const setToggleAction = (toggle) => ({
-    type: SET_TOGGLE,
-    toggle,
-})
-
-export const setToggle2Action = (toggle_2) => ({
-    type: SET_TOGGLE_2,
-    toggle_2,
-})
-
-export const setTranslateAction = (translate) => ({
-    type: SET_TRANSLATE,
-    translate,
+export const setHeaderEffectAction = (toggle, toggle_2, translate) => ({
+    type: SET_HEADER_EFFECT,
+    headerEffect: {
+        toggle,
+        toggle_2,
+        translate
+    }
 })
 
 export const setMediaSponsorEffectAction = () => ({

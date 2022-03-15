@@ -1,9 +1,11 @@
-import { SET_GUEST_SPEAKER_EFFECT, SET_MEDIA_SPONSOR_EFFECT, SET_TOGGLE, SET_TOGGLE_2, SET_TRANSLATE } from "../types/AppEffectTypes"
+import { SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT } from "../types/AppEffectTypes"
 
 const stateDefault = {
-    toggle: true,
-    toggle_2: true,
-    translate: "translateY(-100px)",
+    headerEffect:{
+        toggle: true,
+        toggle_2: true,
+        translate: "translateY(-100px)",
+    },
     mediaSponsorEffect: {
         opacity: 0,
         translate: "translateY(100px)",
@@ -17,14 +19,8 @@ const stateDefault = {
 
 export const AppEffectReducer = (state = stateDefault, action) => {
     switch (action.type) {
-        case SET_TOGGLE: {
-            return { ...state, toggle: action.toggle }
-        }
-        case SET_TOGGLE_2: {
-            return { ...state, toggle_2: action.toggle_2 }
-        }
-        case SET_TRANSLATE: {
-            return { ...state, translate: action.translate }
+        case SET_HEADER_EFFECT: {
+            return {...state, headerEffect: action.headerEffect}
         }
         case SET_MEDIA_SPONSOR_EFFECT: {
             return { ...state, mediaSponsorEffect: action.mediaSponsorEffect }

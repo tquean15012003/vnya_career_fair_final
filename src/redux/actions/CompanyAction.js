@@ -33,6 +33,9 @@ const companyList = [
                 icon: "fab fa-instagram",
             },
         ],
+        companySpeaker: [
+            {image: './assets/img/vnya_speaker_shopee.png'},
+        ],
     },
     {
         id: "2",
@@ -60,6 +63,9 @@ const companyList = [
                 site: "https://www.linkedin.com/company/procter-and-gamble/",
                 icon: "fab fa-linkedin",
             },
+        ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_pandg.png"},
         ],
     },
     {
@@ -92,7 +98,11 @@ const companyList = [
                 site: "https://www.youtube.com/channel/UCHJnltjgj0Y6xCxPzziHhHA",
                 icon: "fab fa-youtube",
             },
-        ]
+        ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_intel_1.png"},
+            {image: "./assets/img/vnya_speaker_intel_2.png"},
+        ],
     },
     {
         id: "4",
@@ -121,6 +131,10 @@ const companyList = [
                 icon: "fab fa-linkedin",
             },
         ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_sim_1.png"},
+            {image: "./assets/img/vnya_speaker_sim_2.png"},
+        ],
     },
     {
         id: "5",
@@ -148,6 +162,9 @@ const companyList = [
                 icon: "fab fa-linkedin",
             },
         ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_vng.png"},
+        ],
     },
     {
         id: "6",
@@ -156,6 +173,7 @@ const companyList = [
         goldSponsor: true, videoURL: "",
         companyInfo: [],
         companySocial: [],
+        companySpeaker: [],
     },
     {
         id: "7",
@@ -186,6 +204,10 @@ const companyList = [
                 site: "https://www.youtube.com/c/loreal",
                 icon: "fab fa-youtube",
             },
+        ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_loreal_1.png"},
+            {image: "./assets/img/vnya_speaker_loreal_2.png"},
         ],
     },
     {
@@ -219,6 +241,9 @@ const companyList = [
                 icon: "fab fa-youtube",
             },
         ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_smart.png"},
+        ],
     },
     {
         id: "9",
@@ -247,6 +272,9 @@ const companyList = [
                 icon: "fab fa-linkedin",
             },
         ],
+        companySpeaker: [
+            {image: "./assets/img/vnya_speaker_aiesec.png"},
+        ],
     },
     {
         id: "10",
@@ -255,6 +283,7 @@ const companyList = [
         goldSponsor: false, videoURL: "",
         companyInfo: [],
         companySocial: [],
+        companySpeaker: [],
     },
 
 ]

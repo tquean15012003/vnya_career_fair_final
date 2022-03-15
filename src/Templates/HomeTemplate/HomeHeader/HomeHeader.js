@@ -3,12 +3,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setToggle2Action, setToggleAction, setTranslateAction } from '../../../redux/actions/AppEffectActions'
+import { setHeaderEffectAction } from '../../../redux/actions/AppEffectActions'
 
 export default function HomeHeader(props) {
 
-  const { toggle, toggle_2, translate } = useSelector(state => state.AppEffectReducer)
+  const { headerEffect } = useSelector(state => state.AppEffectReducer)
 
+  const { toggle, toggle_2, translate } = headerEffect
+  
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -16,11 +18,11 @@ export default function HomeHeader(props) {
     window.addEventListener("scroll", () => {
       const position = window.pageYOffset
       if (position > 300) {
-        dispatch(setTranslateAction("translateY(0)"))
+        dispatch(setHeaderEffectAction(toggle, toggle_2, "translateY(0)"))
       }
       else {
-        dispatch(setTranslateAction("translateY(-100px)"))
-        dispatch(setToggle2Action(true))
+        dispatch(setHeaderEffectAction(toggle, toggle_2, "translateY(-100px)"))
+        dispatch(setHeaderEffectAction(toggle, true, translate))
       }
     })
   }, [])
@@ -32,7 +34,7 @@ export default function HomeHeader(props) {
         <div className="container px-4 mx-auto md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">
             <button onClick={() => {
-              dispatch(setToggleAction(!toggle))
+              dispatch(setHeaderEffectAction(!toggle, toggle_2, translate))
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 opacity-80 sm:hidden">
               <i className="fas fa-bars text-white" />
             </button>
@@ -46,7 +48,7 @@ export default function HomeHeader(props) {
             </a>
             <p className="text-xl font-bold break-all hidden sm:block md:hidden">Vietnamese Youth Alliance</p>
             <button onClick={() => {
-              dispatch(setToggleAction(!toggle))
+              dispatch(setHeaderEffectAction(!toggle, toggle_2, translate))
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 hidden sm:block sm:opacity-80 sm:hover:opacity-75 md:hidden cursor-default sm:cursor-pointer ">
               <i className="fas fa-bars text-white" />
             </button>
@@ -71,7 +73,7 @@ export default function HomeHeader(props) {
         <div className="container px-4 mx-auto md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">
             <button onClick={() => {
-              dispatch(setToggle2Action(!toggle_2))
+              dispatch(setHeaderEffectAction(toggle, !toggle_2, translate))
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 opacity-80 sm:hidden">
               <i className="fas fa-bars text-white" />
             </button>
@@ -82,7 +84,7 @@ export default function HomeHeader(props) {
             </a>
             <p className="text-xl font-bold break-all hidden sm:block md:hidden">Vietnamese Youth Alliance</p>
             <button onClick={() => {
-              dispatch(setToggle2Action(!toggle_2))
+              dispatch(setHeaderEffectAction(toggle, !toggle_2, translate))
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 hidden sm:block sm:opacity-80 sm:hover:opacity-75 md:hidden cursor-default sm:cursor-pointer ">
               <i className="fas fa-bars text-white" />
             </button>

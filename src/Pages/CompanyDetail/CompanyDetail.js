@@ -21,7 +21,7 @@ export default function CompanyDetail() {
 
     useEffect(() => {
         dispatch(getCompanyDetailAction(id))
-    }, [])
+    },[])
 
     // render videos if is gold sponsor
     const renderVideo = () => {
@@ -34,7 +34,7 @@ export default function CompanyDetail() {
 
     // render company information
     const renderInfo = () => {
-        return companyDetail?.companyInfo?.map((item, index) => {
+        return companyDetail.companyInfo.map((item, index) => {
             return (
                 <Fragment key={index}>
                     <p>{item}</p>
@@ -46,12 +46,13 @@ export default function CompanyDetail() {
 
     // render company's social media
     const renderCompanySocial = () => {
-        return companyDetail?.companySocial?.map((item, index) => {
+        return companyDetail.companySocial.map((item, index) => {
             return (
                 <a className="mr-3 text-gray-500 hover:text-gray-900" target="_blank" rel="noreferrer" href={item.site} key={index}><i style={{ fontSize: "25px" }} className={item.icon}></i></a>
             )
         })
     }
+
     return (
         <div className="container mx-auto">
             <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-center mt-5 xl:mt-10">{companyDetail?.companyName}</h1>
