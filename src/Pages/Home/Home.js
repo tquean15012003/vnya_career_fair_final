@@ -7,6 +7,7 @@ import HomePartner from './HomePartner/HomePartner'
 import HomeGuestSpeaker from './HomeGuestSpeaker/HomeGuestSpeaker'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSponsorAction } from '../../redux/actions/SponsorActions'
+import { setBackToHomeAction } from '../../redux/actions/AppEffectActions'
 
 export default function Home(props) {
 
@@ -19,8 +20,11 @@ export default function Home(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    //fetch image of sponsors
+    // fetch image of sponsors
     dispatch(setSponsorAction())
+
+    // hide back to home button when in Home componnent
+    dispatch(setBackToHomeAction(true))
   }, [])
 
   return (

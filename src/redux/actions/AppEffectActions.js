@@ -1,4 +1,4 @@
-import { SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT } from "../types/AppEffectTypes";
+import { SET_BACK_TO_HOME, SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT } from "../types/AppEffectTypes";
 
 export const setHeaderEffectAction = (toggle, toggle_2, translate) => ({
     type: SET_HEADER_EFFECT,
@@ -23,4 +23,9 @@ export const setGuestSpeakerEffectAction = () => ({
         opacity: 1,
         translate: "translateY(0)",
     }
+})
+
+export const setBackToHomeAction = (hideBackToHome) => ({
+    type: SET_BACK_TO_HOME,
+    hideBackToHome,
 })

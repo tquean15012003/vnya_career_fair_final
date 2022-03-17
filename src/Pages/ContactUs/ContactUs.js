@@ -1,18 +1,23 @@
 // Contact us form permits user to send email to organization quickly
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import emailjs from 'emailjs-com'
+import { setBackToHomeAction } from '../../redux/actions/AppEffectActions';
+import { useDispatch } from 'react-redux';
+import { SERVICE_TYPE, TEMPLATE_ID, USER_ID } from '../../Util/Email/EmailConst';
 
 export default function ContactUs() {
 
     const formContactRef = useRef(null);
 
+    const dispatch = useDispatch()
+
     const sendEmail = (e) => {
         // prevent reload when submit form
         e.preventDefault();
-        
+
         // call api to send email from emailjs
-        emailjs.sendForm('service_8lsu3s2', 'template_tnl8u4s', formContactRef.current, '_ESVSkQ8pLg7FH4K6')
+        emailjs.sendForm( SERVICE_TYPE, TEMPLATE_ID, formContactRef.current, USER_ID)
             .then(() => {
                 alert("We have received your response. Thank you for contact us.")
                 e.target.reset()
@@ -20,6 +25,11 @@ export default function ContactUs() {
                 alert("Your message has not sent")
             });
     };
+
+    useEffect(() => {
+        // Display back to home button
+        dispatch(setBackToHomeAction(false))
+    })
 
     return (
         <form className="container mx-auto mt-12 w-full sm:w-4/5 md:3/4 lg:w-1/2" ref={formContactRef} onSubmit={sendEmail}>

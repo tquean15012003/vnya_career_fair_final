@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import BackToHome from '../../Components/BackToHome/BackToHome';
 import HomeFooter from './HomeFooter/HomeFooter';
 import HomeHeader from './HomeHeader/HomeHeader';
 
@@ -17,6 +18,7 @@ export default function HomeTemplate(props) {
             <HomeHeader myRefHeaderHomeTemplate={myRefHeaderHomeTemplate} executeScrollHeaderHomeTemplate={executeScrollHeaderHomeTemplate} executeScrollGoldSponsorHome={executeScrollGoldSponsorHome} />
             <Component myRefGoldSponsorHome={myRefGoldSponsorHome} />
             <HomeFooter />
+            <BackToHome />
         </>
     )
 }

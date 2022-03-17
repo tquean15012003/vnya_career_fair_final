@@ -10,7 +10,7 @@ export default function HomeHeader(props) {
   const { headerEffect } = useSelector(state => state.AppEffectReducer)
 
   const { toggle, toggle_2, translate } = headerEffect
-  
+
   const dispatch = useDispatch()
 
   useEffect(() => {

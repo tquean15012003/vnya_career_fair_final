@@ -49,7 +49,7 @@ export default function HomeBackground() {
     )
 }
 
-// set previous and next arrow of carousel
+// custom previous and next arrow of carousel
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (

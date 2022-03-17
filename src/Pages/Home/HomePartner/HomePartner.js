@@ -28,7 +28,6 @@ export default function HomePartner(props) {
     }
 
     useEffect(() => {
-
         // load only when scroll to the component
         let height = 0;
         const handleEffect = setInterval(() => {

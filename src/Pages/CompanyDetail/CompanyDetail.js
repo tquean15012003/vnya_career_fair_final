@@ -2,6 +2,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { setBackToHomeAction } from '../../redux/actions/AppEffectActions'
 import { getCompanyDetailAction } from '../../redux/actions/CompanyAction'
 
 export default function CompanyDetail() {
@@ -20,8 +21,12 @@ export default function CompanyDetail() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        // fetch company's detail according to id
         dispatch(getCompanyDetailAction(id))
-    },[])
+
+        // Display back to home button
+        dispatch(setBackToHomeAction(false))
+    }, [])
 
     // render videos if is gold sponsor
     const renderVideo = () => {
