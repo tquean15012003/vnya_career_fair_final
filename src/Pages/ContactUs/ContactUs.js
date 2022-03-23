@@ -32,7 +32,9 @@ export default function ContactUs() {
     })
 
     return (
-        <form className="container mx-auto mt-12 w-full sm:w-4/5 md:3/4 lg:w-1/2" ref={formContactRef} onSubmit={sendEmail}>
+        <>
+        <h1 className="text-3xl md:text-4xl text-center mt-12 font-bold">Contact us</h1>
+        <form className="container mx-auto mt-6 w-full sm:w-4/5 md:3/4 lg:w-1/2" ref={formContactRef} onSubmit={sendEmail}>
             <div>
                 <span className="uppercase text-sm text-gray-500 font-bold">Subject</span>
                 <input name="subject" className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" type="text" />
@@ -56,5 +58,7 @@ export default function ContactUs() {
                 </button>
             </div>
         </form>
+        </>
+        
     )
 }
