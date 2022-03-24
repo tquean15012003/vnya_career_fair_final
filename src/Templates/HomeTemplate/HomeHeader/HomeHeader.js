@@ -1,17 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { setHeaderEffectAction } from '../../../redux/actions/AppEffectActions'
 
 export default function HomeHeader(props) {
 
-  const { headerEffect } = useSelector(state => state.AppEffectReducer)
+  const dispatch = useDispatch()
+
+  const { headerEffect, myRefGoldSponsorHome } = useSelector(state => state.AppEffectReducer)
+
+  const executeScrollGoldSponsorHome = () => myRefGoldSponsorHome.current.scrollIntoView()
+
+  const executeScrollHeaderHomeTemplate = () => myRefHeaderHomeTemplate.current.scrollIntoView()
 
   const { toggle, toggle_2, translate } = headerEffect
 
-  const dispatch = useDispatch()
+  const myRefHeaderHomeTemplate = useRef(null)
 
   useEffect(() => {
     // capture the event when position > 300, the fixed nav will appear
@@ -30,7 +36,7 @@ export default function HomeHeader(props) {
   return (
     <>
       {/* Header Nav*/}
-      <nav ref={props.myRefHeaderHomeTemplate} className="py-2 md:py-3 text-white bg-gradient-to-b from-blue-900 to-blue-800">
+      <nav ref={myRefHeaderHomeTemplate} className="py-2 md:py-3 text-white bg-gradient-to-b from-blue-900 to-blue-800">
         <div className="container px-4 mx-auto md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center">
             <button onClick={() => {
@@ -38,7 +44,7 @@ export default function HomeHeader(props) {
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 opacity-80 sm:hidden">
               <i className="fas fa-bars text-white" />
             </button>
-            <a onClick={() => { props.executeScrollHeaderHomeTemplate() }} className="cursor-pointer font-bold text-xl text-indigo-600">
+            <a onClick={() => { executeScrollHeaderHomeTemplate() }} className="cursor-pointer font-bold text-xl text-indigo-600">
               <div className="hidden sm:block" style={{ backgroundImage: `url('./assets/img/vnya_logo.png')`, width: "61px", height: "60px", backgroundSize: "cover" }}>
                 <img src="./assets/img/vnya_logo.png" style={{ width: "61px", height: "60px", opacity: "0" }} alt="./assets/img/vnya_logo.png" />
               </div>
@@ -61,7 +67,7 @@ export default function HomeHeader(props) {
           </div>
           <div className={`${toggle ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
             <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
-            <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
+            <a onClick={() => { executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
             <Link to='/contact' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact us</Link>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-semibold text-white bg-orange-500 hover:bg-orange-600 border-t-4 border-r-4 border-orange-700 rounded-md duration-300 hover:scale-120" rel="noreferrer">Register</a>
           </div>
@@ -77,7 +83,7 @@ export default function HomeHeader(props) {
             }} className="border border-solid border-white px-3 py-1 rounded text-gray-600 opacity-80 sm:hidden">
               <i className="fas fa-bars text-white" />
             </button>
-            <a onClick={() => { props.executeScrollHeaderHomeTemplate() }} className="cursor-pointer font-bold text-xl text-indigo-600">
+            <a onClick={() => { executeScrollHeaderHomeTemplate() }} className="cursor-pointer font-bold text-xl text-indigo-600">
               <div style={{ backgroundImage: `url('./assets/img/vnya_logo.png')`, width: "51px", height: "50px", backgroundSize: "cover" }}>
                 <img src="./assets/img/vnya_logo.png" style={{ width: "51px", height: "50px", opacity: "0" }} alt="./assets/img/vnya_logo.png" />
               </div>
@@ -97,7 +103,7 @@ export default function HomeHeader(props) {
           </div>
           <div className={`${toggle_2 ? "hidden" : "flex"} md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0`}>
             <Link to='/' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">About</Link>
-            <a onClick={() => { props.executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
+            <a onClick={() => { executeScrollGoldSponsorHome() }} className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Partners</a>
             <Link to='/contact' className="md:hidden lg:block cursor-pointer p-2 lg:px-4 md:mx-2 text-lg font-medium text-white rounded hover:bg-orange-500 transition-colors duration-500">Contact us</Link>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVdwDSpxli4ZZhHI5xN95JuHahsXek0HBX7NNWDUD-mOLRrw/viewform" target="_blank" className="cursor-pointer opacity-100 p-2 lg:px-4 md:mx-2 text-lg font-medium text-white border-t-4 border-r-4 border-orange-700 rounded-md bg-orange-500 hover:bg-orange-600 duration-300 hover:scale-120" rel="noreferrer">Register</a>
           </div>

@@ -1,4 +1,4 @@
-import { SET_BACK_TO_HOME, SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT } from "../types/AppEffectTypes"
+import { SET_BACK_TO_HOME, SET_GUEST_SPEAKER_EFFECT, SET_HEADER_EFFECT, SET_MEDIA_SPONSOR_EFFECT, SET_REF_SCROLL_GOLD_SPONSOR_HOME } from "../types/AppEffectTypes"
 
 const stateDefault = {
     headerEffect: {
@@ -6,6 +6,8 @@ const stateDefault = {
         toggle_2: true,
         translate: "translateY(-100px)",
     },
+    myRefGoldSponsorHome: null,
+
     mediaSponsorEffect: {
         opacity: 0,
         translate: "translateY(100px)",
@@ -31,6 +33,9 @@ export const AppEffectReducer = (state = stateDefault, action) => {
         }
         case SET_BACK_TO_HOME: {
             return { ...state, hideBackToHome: action.hideBackToHome }
+        }
+        case SET_REF_SCROLL_GOLD_SPONSOR_HOME: {
+            return { ...state, myRefGoldSponsorHome: action.myRefGoldSponsorHome}
         }
         default: {
             return { ...state }

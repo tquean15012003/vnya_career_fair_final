@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setRefScrollGoldSponsorHomeAction } from '../../../redux/actions/AppEffectActions'
 
 export default function HomeGoldSponsor(props) {
 
-    const { myRefGoldSponsorHome, goldSponsorList } = props
+    const { goldSponsorList } = props
 
     const { navigate } = useSelector(state => state.NavigateReducer)
+
+    const dispatch = useDispatch()
 
     const renderGoldSponsor = () => {
         return goldSponsorList.map((sponsor, index) => {
@@ -19,6 +22,12 @@ export default function HomeGoldSponsor(props) {
             )
         })
     }
+
+    const myRefGoldSponsorHome = useRef(null)
+
+    useEffect(() => {
+        dispatch(setRefScrollGoldSponsorHomeAction(myRefGoldSponsorHome))
+    }, []) 
 
     return (
         <div ref={myRefGoldSponsorHome} className="mt-12">
